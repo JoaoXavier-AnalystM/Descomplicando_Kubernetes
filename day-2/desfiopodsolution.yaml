@@ -16,7 +16,7 @@ spec:
         memory: "129Mi" #Estava sem informacões
         cpu: "0.5"
       requests: #Formatação estava errada
-        memory: "64Mi"
-        cpu: "0.3"
+        memory: "64Mi" #Ajuste de limite e unidade
+        cpu: "0.3" #trocar "," por "."
   dnsPolicy: ClusterFirst #ClusterSecond
   restartPolicy: Always
