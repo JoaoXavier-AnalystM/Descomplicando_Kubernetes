@@ -1,0 +1,22 @@
+apiVersion: v1 #apiVersion: v1beta1
+kind: Pod #kind: pods
+metadata:
+  labels:
+    run: nginx-giropops
+    app: giropops-strigus
+  name: nginx-giropops #nginx_giropops não aceita "_" 
+spec:
+  containers:
+  - image: nginx
+    name: nginx-giropops #nginx_giropops não aceita "_" 
+    ports:
+    - containerPort: 80
+    resources:
+      limits:
+        memory: "129Mi" #Estava sem informacões
+        cpu: "0.5"
+      requests: #Formatação estava errada
+        memory: "64Mi"
+        cpu: "0.3"
+  dnsPolicy: ClusterFirst #ClusterSecond
+  restartPolicy: Always

@@ -1,0 +1,21 @@
+apiVersion: v1 # versão da API do Kubernetes
+kind: Pod # tipo do objeto que estamos criando
+metadata: # metadados do Pod
+  labels: # labels do Pod
+    run: giropops-limit # label run com o valor giropops
+  name: giropops-limit # nome do Pod que estamos criando 
+spec: # especificação do Pod 
+  containers: # containers que estão dentro do Pod 
+  - image: ubuntu # nome do container 
+    name: ubuntu # imagem do container
+    args:
+    resources: # recursos que estão sendo utilizados pelo container
+      limits: # limites máximo de recursos que o container pode utilizar
+        memory: "128Mi" # limite de memória que está sendo utilizado pelo container, no caso 128 megabytes no máximo 
+        cpu: "0.5" # limite máxima de CPU que o container pode utilizar, no caso 50% de uma CPU no máximo
+      requests: # recursos garantidos ao container
+          memory: "64Mi" # memória garantida ao container, no caso 64 megabytes
+          cpu: "0.3" # CPU garantida ao container, no caso 30% de uma CPU
+  
+  dnsPolicy:
+  restartPolicy: Always

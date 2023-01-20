@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: giropops
+  labels:
+    name: giropops
+spec:
+  containers:
+  - name: ubuntu-limit
+    image: ubuntu
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    

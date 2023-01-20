@@ -3,14 +3,12 @@ kind: Pod
 metadata:
   creationTimestamp: null
   labels:
-    run: giroops
-  name: giroops
+    run: para-nginx
+  name: para-nginx
 spec:
   containers:
-  - image: ngix
-    name: giroops
-    ports:
-    - containerPort: 80
+  - image: nginx
+    name: para-nginx
     resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
